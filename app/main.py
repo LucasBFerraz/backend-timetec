@@ -74,6 +74,10 @@ def verify_recaptcha(token: str) -> bool:
     except Exception:
         return False
 
+@app.get("/")
+def root():
+    return {"message": "API is up and running 🚀"}
+
 @app.post("/send")
 def send_template_message(message: WhatsAppTemplateMessage, request: Request):
     if not verify_recaptcha(message.captchaToken):
