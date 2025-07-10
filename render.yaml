@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fastapi-render
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
